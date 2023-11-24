@@ -21,7 +21,9 @@ document.addEventListener("DOMContentLoaded", function () {
       cardNameInput.classList.add("invalid-input");
       isValid = false
     } else {
+      const cardNameInput = document.getElementById("name");
       nameElement.innerHTML = cardNameValue;
+      cardNameInput.classList.remove('invalid-input')
     }
 
     if (isNaN(cardWitnNoSpace) || cardWitnNoSpace === "") {
@@ -32,8 +34,10 @@ document.addEventListener("DOMContentLoaded", function () {
       isValid = false
     } else {
         const cardNumberInput = document.getElementById("number");
+        const cardNumberMessage = document.getElementById("invalid-number");
       numberElement.innerHTML = cardNumberValue;
       cardNumberInput.classList.remove("invalid-input");
+      cardNumberMessage.style.display = "none";
     }
 
     if (isNaN(cardCvValue) || cardCvValue === "") {
